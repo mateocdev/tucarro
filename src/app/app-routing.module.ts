@@ -12,6 +12,10 @@ const routes: Routes = [
     redirectTo: 'vehiculos',
     pathMatch: 'full',
   },
+  {
+    path: '**',
+    redirectTo: 'vehiculos',
+  },
 ];
 
 @NgModule({

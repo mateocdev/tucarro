@@ -1,19 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { VehiculosRoutingModule } from './vehiculos-routing.module';
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
-import { ListPageComponent } from './pages/list-page/list-page.component';
-
+import { VehiculosRoutingModule } from './vehiculos-routing.module';
 
 @NgModule({
-  declarations: [
-    LayoutPageComponent,
-    ListPageComponent
-  ],
-  imports: [
-    CommonModule,
-    VehiculosRoutingModule
-  ]
+  declarations: [LayoutPageComponent],
+  imports: [CommonModule, VehiculosRoutingModule],
 })
-export class VehiculosModule { }
+export class VehiculosModule {}

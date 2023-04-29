@@ -1,5 +1,53 @@
-<ul>
-  <li *ngFor="let vehiculo of vehiculos">
-    {{ vehiculo.marca }} - {{ vehiculo.modelo }}
-  </li>
-</ul>
+<div class="container">
+  <img src="../../../../assets/TuSegundazo.com.png" alt="logo company" />
+
+  <img src="../../../../assets/Line 14.png" alt="line divider" />
+  <img src="../../../../assets/Frame 1.png" alt="banner with car" />
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef>Marca</th>
+      <td mat-cell *matCellDef="let element">{{ element.marca }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="linea">
+      <th mat-header-cell *matHeaderCellDef>Linea</th>
+      <td mat-cell *matCellDef="let element">{{ element.linea }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef>Modelo</th>
+      <td mat-cell *matCellDef="let element">{{ element.modelo }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <ul>
+    <li style="list-style: none">
+      <span>Total Renault: {{ calculateCars("Renault") }}</span>
+    </li>
+    <li style="list-style: none">
+      <span>Total Chevrolet: {{ calculateCars("Chevrolet") }}</span>
+    </li>
+    <li style="list-style: none">
+      <span>Total Nissan: {{ calculateCars("Nissan") }}</span>
+    </li>
+  </ul>
+
+  <footer style="text-align: center">
+    Contact us: +57 3102105253 - info@tusegundazo.com - @tusegundazo
+  </footer>
+</div>

@@ -8,11 +8,17 @@ import { VehiculosService } from '../../services/vehiculos.service';
   styles: [],
 })
 export class LayoutPageComponent implements OnInit {
-  public vehiculos: Vehiculo[] = [];
+  public dataSource: Vehiculo[] = [];
+
   constructor(private vehiculosService: VehiculosService) {}
   ngOnInit(): void {
     this.vehiculosService.getVehiculos().subscribe((vehiculos) => {
-      this.vehiculos = vehiculos;
+      this.dataSource = vehiculos;
     });
   }
+  calculateCars = (marca: string) => {
+    return this.dataSource.filter((vehiculo) => vehiculo.marca === marca)
+      .length;
+  };
+  displayedColumns: string[] = ['id', 'marca', 'linea', 'modelo'];
 }
